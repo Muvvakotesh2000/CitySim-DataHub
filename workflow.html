@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CitySim Workflow Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    /* Timeline container */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    /* The vertical timeline line */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #ccc;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+    /* Container for timeline items */
+    .timeline-item {
+      padding: 20px 30px;
+      position: relative;
+      background: #f9f9f9;
+      border-radius: 6px;
+      width: 45%;
+      margin-bottom: 20px;
+    }
+    /* Left side timeline item */
+    .timeline-item.left {
+      left: 0;
+    }
+    /* Right side timeline item */
+    .timeline-item.right {
+      left: 55%;
+    }
+    /* The circles on timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: white;
+      border: 3px solid #FF9F55;
+      border-radius: 50%;
+      top: 20px;
+      right: -8px;
+      z-index: 1;
+    }
+    .timeline-item.right::before {
+      left: -8px;
+    }
+    .timeline-item h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #FF9F55;
+    }
+    .timeline-item p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    /* Responsive adjustments */
+    @media screen and (max-width: 600px) {
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+      }
+      .timeline-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .timeline::after {
+        left: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CitySim Workflow Diagram</h1>
+
+  <div class="timeline">
+
+    <div class="timeline-item left">
+      <h2>Step 1: Data Generation</h2>
+      <p>Simulated data is generated using Python scripts. Data types include Environment, IoT Sensor, Public Services, Traffic, and Utilities data.</p>
+    </div>
+
+    <div class="timeline-item right">
+      <h2>Step 2: AWS Infrastructure Setup (Terraform)</h2>
+      <p>Terraform scripts create and configure AWS resources including S3 buckets, CloudWatch log groups, security groups, subnets, and a VPC.</p>
+    </div>
+
+    <div class="timeline-item left">
+      <h2>Step 3: Apache Kafka Data Streaming</h2>
+      <p>Data is streamed via Kafka using Python producers. Kafka topics are created for traffic, utilities, public services, environment, and IoT sensors.</p>
+    </div>
+
+    <div class="timeline-item right">
+      <h2>Step 4: Kafka & Apache Spark Processing</h2>
+      <p>Kafka data is consumed by Apache Spark for schema validation, time-based aggregations, data cleaning, and transformation. Processed data is stored in S3.</p>
+    </div>
+
+    <div class="timeline-item left">
+      <h2>Step 5: AWS S3 Storage</h2>
+      <p>Raw and processed data are stored in separate S3 buckets. The raw bucket holds unprocessed data from Kafka while the processed bucket holds Spark outputs.</p>
+    </div>
+
+    <div class="timeline-item right">
+      <h2>Step 6: Flattening the Processed Data</h2>
+      <p>Every five minutes, the processed data is flattened to simplify its structure for downstream analytics and visualization.</p>
+    </div>
+
+    <div class="timeline-item left">
+      <h2>Step 7: Pushing Data to OpenSearch</h2>
+      <p>An AWS Glue job pushes the flattened data from the processed S3 bucket to OpenSearch. Previous indexes are deleted and new ones created.</p>
+    </div>
+
+    <div class="timeline-item right">
+      <h2>Step 8: Real-Time Data Dashboards</h2>
+      <p>A Python script converts OpenSearch JSON objects to CSV format, which is then connected live to Tableau for dashboard visualization.</p>
+    </div>
+
+    <div class="timeline-item left">
+      <h2>Step 9: Merging Data (AWS Glue Job)</h2>
+      <p>Data generated over the last hour is merged via an AWS Glue job. Nightly merging at 11:30 PM creates comprehensive daily files in both raw and processed buckets.</p>
+    </div>
+
+    <div class="timeline-item right">
+      <h2>Step 10: Flattening Raw Data (AWS Glue Job)</h2>
+      <p>At 11:40 PM, a Glue job flattens the large raw data files using batch processing, outputting a flattened CSV file stored in an output bucket.</p>
+    </div>
+
+    <div class="timeline-item left">
+      <h2>Step 11: Pushing Flattened Raw Data to RedShift</h2>
+      <p>A Lambda function, triggered by an EventBridge rule at 11:45 PM, loads the flattened CSV into RedShift using the COPY command based on predefined schemas.</p>
+    </div>
+
+    <div class="timeline-item right">
+      <h2>Step 12: Deleting All Data</h2>
+      <p>At 12 PM, a Lambda function (via EventBridge) deletes all data from the S3 buckets to clear the slate for the next day’s data ingestion.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

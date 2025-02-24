@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CitySim Workflow - LinkedIn Post</title>
+  <!-- Example of adding a Google Font (Poppins) for a modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" 
+    rel="stylesheet"
+  >
+  <style>
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #333;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 30px;
+      color: #1f3a93;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Grid Layout for Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Card Style */
+    .card {
+      position: relative;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden; /* allows the pseudo-element to be hidden */
+      background: linear-gradient(120deg, #fdfdfd 0%, #ffffff 100%);
+      transition: transform 0.4s, box-shadow 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .card:hover {
+      transform: translateY(-8px) rotate(0.5deg);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    /* Pastel overlay using a pseudo-element for a subtle gradient */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(217,235,255,0.25), rgba(255,255,255,0.3));
+      z-index: 0;
+      transition: opacity 0.4s;
+    }
+    .card:hover::before {
+      opacity: 0.9;
+    }
+    .card img {
+      position: relative;
+      z-index: 1; /* ensure the logo is above the pseudo-element */
+      max-width: 50px; /* Smaller icon for a neat look */
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card img:hover {
+      transform: scale(1.1);
+    }
+    .card h3 {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      color: #1f3a93;
+    }
+    .card p {
+      position: relative;
+      z-index: 1;
+      font-size: 0.95em;
+      line-height: 1.4;
+      color: #555;
+    }
+
+    /* Fade-in Up Animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Staggered Animation Delays */
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+    .card:nth-child(7) { animation-delay: 0.7s; }
+    .card:nth-child(8) { animation-delay: 0.8s; }
+    .card:nth-child(9) { animation-delay: 0.9s; }
+    .card:nth-child(10) { animation-delay: 1.0s; }
+    .card:nth-child(11) { animation-delay: 1.1s; }
+    .card:nth-child(12) { animation-delay: 1.2s; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>CitySim Workflow</h1>
+
+    <div class="grid">
+      <!-- Step 1: Data Generation -->
+      <div class="card">
+        <img src="python script.jpg" alt="Python Logo">
+        <h3>Step 1: Data Generation</h3>
+        <p>Simulated data generation using Python scripts.</p>
+      </div>
+
+      <!-- Step 2: AWS Infrastructure Setup -->
+      <div class="card">
+        <img src="terraform.jpg" alt="Terraform Logo">
+        <h3>Step 2: AWS Infrastructure</h3>
+        <p>Terraform sets up AWS resources: S3, CloudWatch, VPC, and more.</p>
+      </div>
+
+      <!-- Step 3: Apache Kafka Data Streaming -->
+      <div class="card">
+        <img src="apache kafka.png" alt="Apache Kafka Logo">
+        <h3>Step 3: Data Streaming</h3>
+        <p>Real-time data streaming via Apache Kafka.</p>
+      </div>
+
+      <!-- Step 4: Apache Spark Processing -->
+      <div class="card">
+        <img src="apache spark.png" alt="Apache Spark Logo">
+        <h3>Step 4: Data Processing</h3>
+        <p>Apache Spark processes data with validation and aggregation.</p>
+      </div>
+
+      <!-- Step 5: AWS S3 Storage -->
+      <div class="card">
+        <img src="S3 logo.png" alt="Amazon S3 Logo">
+        <h3>Step 5: Data Storage</h3>
+        <p>Raw and processed data are stored in AWS S3 buckets.</p>
+      </div>
+
+      <!-- Step 6: Data Transformation -->
+      <div class="card">
+        <img src="Glue.png" alt="AWS Glue Logo">
+        <h3>Step 6: Data Transformation</h3>
+        <p>AWS Glue flattens and transforms data for analytics.</p>
+      </div>
+
+      <!-- Step 7: Pushing to OpenSearch -->
+      <div class="card">
+        <img src="OpenSearch.png" alt="Amazon OpenSearch Logo">
+        <h3>Step 7: Search & Indexing</h3>
+        <p>Transformed data is pushed to OpenSearch for fast querying.</p>
+      </div>
+
+      <!-- Step 8: Data Visualization -->
+      <div class="card">
+        <img src="Tableau.png" alt="Tableau Logo">
+        <h3>Step 8: Visualization</h3>
+        <p>Tableau dashboards provide real-time data insights.</p>
+      </div>
+
+      <!-- Step 9: Data Merging -->
+      <div class="card">
+        <img src="Glue.png" alt="AWS Glue Logo">
+        <h3>Step 9: Data Merging</h3>
+        <p>AWS Glue merges hourly and nightly data files.</p>
+      </div>
+
+      <!-- Step 10: Flattening Raw Data -->
+      <div class="card">
+        <img src="Glue.png" alt="AWS Glue Logo">
+        <h3>Step 10: Flattening Raw Data</h3>
+        <p>Batch processing flattens large raw data files into CSV.</p>
+      </div>
+
+      <!-- Step 11: Loading to RedShift -->
+      <div class="card">
+        <img src="amazon-redshift.jpg" alt="Amazon Redshift Logo">
+        <h3>Step 11: RedShift Loading</h3>
+        <p>Lambda and RedShift COPY command load data into RedShift tables.</p>
+      </div>
+
+      <!-- Step 12: Data Cleanup -->
+      <div class="card">
+        <img src="EventBridge.png" alt="EventBridge Logo">
+        <img src="aws-lambda-logo.png" alt="AWS Lambda Logo" style="max-width:50px;">
+        <h3>Step 12: Data Cleanup</h3>
+        <p>Lambda functions delete S3 data daily for a fresh start.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

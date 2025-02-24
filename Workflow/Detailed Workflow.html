@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CitySim Workflow Diagram</title>
+  <style>
+    /* Reset and Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #333;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #1f3a93;
+    }
+    /* Timeline Container */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    /* Vertical Line */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: #1f3a93;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    /* Timeline Item */
+    .timeline-item {
+      padding: 20px 30px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      width: 45%;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .timeline-item:hover {
+      transform: scale(1.03);
+    }
+    /* Left side items */
+    .timeline-item.left {
+      left: 0;
+    }
+    /* Right side items */
+    .timeline-item.right {
+      left: 55%;
+    }
+    /* Circles on timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 4px solid #1f3a93;
+      border-radius: 50%;
+      top: 20px;
+      right: -10px;
+      z-index: 1;
+    }
+    .timeline-item.right::before {
+      left: -10px;
+      right: auto;
+    }
+    /* Item content */
+    .timeline-item h2 {
+      margin-bottom: 10px;
+      font-size: 1.4em;
+      color: #1f3a93;
+    }
+    .timeline-item p {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: #555;
+    }
+    .logo-container {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .logo-container img {
+      max-width: 60px;
+      margin: 0 5px;
+      vertical-align: middle;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+      }
+      .timeline-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .timeline::after {
+        left: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CitySim Workflow</h1>
+  <div class="timeline">
+
+    <!-- Step 1: Data Generation -->
+    <div class="timeline-item left">
+      <div class="logo-container">
+        <img src="python script.jpg" alt="Python Logo">
+      </div>
+      <h2>Step 1: Data Generation</h2>
+      <p>Simulated data is generated using Python scripts. Data includes Environment, IoT Sensor, Public Services, Traffic, and Utilities information.</p>
+    </div>
+
+    <!-- Step 2: AWS Infrastructure Setup (Terraform) -->
+    <div class="timeline-item right">
+      <div class="logo-container">
+        <img src="terraform.jpg" alt="Terraform Logo">
+      </div>
+      <h2>Step 2: AWS Infrastructure Setup</h2>
+      <p>Terraform scripts create and configure AWS resources: S3 buckets, CloudWatch Log Groups, Security Groups, Subnets, and VPC.</p>
+    </div>
+
+    <!-- Step 3: Apache Kafka Data Streaming -->
+    <div class="timeline-item left">
+      <div class="logo-container">
+        <img src="apache kafka.png" alt="Apache Kafka Logo">
+      </div>
+      <h2>Step 3: Apache Kafka Data Streaming</h2>
+      <p>Data is streamed via Kafka using Python producers, creating topics for Traffic, Utilities, Public Services, Environment, and IoT Sensors.</p>
+    </div>
+
+    <!-- Step 4: Kafka & Apache Spark Processing -->
+    <div class="timeline-item right">
+      <div class="logo-container">
+        <img src="apache spark.png" alt="Apache Spark Logo">
+      </div>
+      <h2>Step 4: Kafka & Spark Processing</h2>
+      <p>Data from Kafka is processed in real time by Apache Spark for schema validation, aggregations, and transformations; results are stored in S3.</p>
+    </div>
+
+    <!-- Step 5: AWS S3 Storage -->
+    <div class="timeline-item left">
+      <div class="logo-container">
+        <img src="S3 logo.png" alt="Amazon S3 Logo">
+      </div>
+      <h2>Step 5: AWS S3 Storage</h2>
+      <p>Raw data from Kafka and processed outputs from Spark are stored in separate S3 buckets for further ETL and analytics.</p>
+    </div>
+
+    <!-- Step 6: Flattening the Processed Data -->
+    <div class="timeline-item right">
+      <div class="logo-container">
+        <!-- Using Glue logo to represent ETL & transformation -->
+        <img src="Glue.png" alt="AWS Glue Logo">
+      </div>
+      <h2>Step 6: Flattening Processed Data</h2>
+      <p>The processed data is flattened every five minutes to simplify the structure for downstream analytics and visualization.</p>
+    </div>
+
+    <!-- Step 7: Pushing Data to OpenSearch -->
+    <div class="timeline-item left">
+      <div class="logo-container">
+        <img src="OpenSearch.png" alt="Amazon OpenSearch Logo">
+        <img src="Glue.png" alt="AWS Glue Logo" style="max-width:40px;">
+      </div>
+      <h2>Step 7: Pushing to OpenSearch</h2>
+      <p>An AWS Glue job pushes flattened data from S3 to OpenSearch, deleting old indexes and creating new ones for real-time search.</p>
+    </div>
+
+    <!-- Step 8: Real-Time Data Dashboards -->
+    <div class="timeline-item right">
+      <div class="logo-container">
+        <img src="Tableau.png" alt="Tableau Logo">
+        <img src="CloudWatch.png" alt="Amazon CloudWatch Logo" style="max-width:40px;">
+      </div>
+      <h2>Step 8: Real-Time Data Dashboards</h2>
+      <p>A Python script converts OpenSearch JSON data to CSV, enabling live dashboarding in Tableau and real-time monitoring via CloudWatch.</p>
+    </div>
+
+    <!-- Step 9: Merging Data (AWS Glue Job) -->
+    <div class="timeline-item left">
+      <div class="logo-container">
+        <img src="Glue.png" alt="AWS Glue Logo">
+      </div>
+      <h2>Step 9: Merging Data</h2>
+      <p>An AWS Glue job merges data hourly (and nightly at 11:30 PM) to produce comprehensive raw and processed files stored in S3.</p>
+    </div>
+
+    <!-- Step 10: Flattening Raw Data (AWS Glue Job) -->
+    <div class="timeline-item right">
+      <div class="logo-container">
+        <img src="Glue.png" alt="AWS Glue Logo">
+      </div>
+      <h2>Step 10: Flattening Raw Data</h2>
+      <p>At 11:40 PM, another Glue job flattens large raw data files using batch processing, producing CSV outputs stored in an output bucket.</p>
+    </div>
+
+    <!-- Step 11: Pushing Flattened Raw Data to RedShift -->
+    <div class="timeline-item left">
+      <div class="logo-container">
+        <img src="amazon-redshift.jpg" alt="Amazon Redshift Logo">
+      </div>
+      <h2>Step 11: Loading to RedShift</h2>
+      <p>A Lambda function (triggered by EventBridge at 11:45 PM) runs a RedShift COPY command to load the flattened CSV into RedShift tables.</p>
+    </div>
+
+    <!-- Step 12: Deleting All Data -->
+    <div class="timeline-item right">
+      <div class="logo-container">
+        <img src="EventBridge.png" alt="Amazon EventBridge Logo">
+        <img src="aws-lambda-logo.png" alt="AWS Lambda Logo" style="max-width:40px;">
+      </div>
+      <h2>Step 12: Data Cleanup</h2>
+      <p>At 12 PM, a Lambda function (via EventBridge) deletes all data from the S3 buckets, preparing the system for the next day’s ingestion.</p>
+    </div>
+
+  </div>
+  
+</body>
+</html>
