@@ -1,0 +1,17 @@
+# Ignore Python cache and virtual environments
+venv/
+__pycache__/
+*.pyc
+
+# Ignore AWS CLI credentials
+*.pem
+
+# Ignore Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+
+# Ignore large datasets or temp files
+data/*
+!data/sample_data.json  # Keep at least one sample data file
+ 

@@ -1,0 +1,39 @@
+Zookeeper:
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+Kafka:
+bin\windows\kafka-server-start.bat config\server.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+.\bin\windows\kafka-topics.bat --create --topic traffic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+.\bin\windows\kafka-topics.bat --create --topic utilities --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+.\bin\windows\kafka-topics.bat --create --topic public_services --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+.\bin\windows\kafka-topics.bat --create --topic environment --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+.\bin\windows\kafka-topics.bat --create --topic iot_sensors --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+
+$env:PYSPARK_PYTHON="C:\Users\muvva\AppData\Local\Programs\Python\Python313\python.exe"
+$env:PYSPARK_DRIVER_PYTHON="C:\Users\muvva\AppData\Local\Programs\Python\Python313\python.exe"
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2 spark_kafka_consumer.py
+
+C:\kafka\kafka_2.12-3.9.0
+
+E:\Kotesh\Projects\CitySim\CitySimCloud\spark_consumer
+ 
+
+citysim-processed-data-bucket(folders):
+- environment_analytics
+-iot_analytics
+-public_services_analytics
+-traffic_analytics
+-utilities_analytics
+
+citysim-raw-data-bucket(folders):
+- environment
+-iot_sensors
+-public_services
+-traffic
+-utilities
