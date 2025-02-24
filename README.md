@@ -2,7 +2,7 @@
 📡 **Real-Time Smart City Data Streaming, Processing, and Analytics**  
 
 ---
-![Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief_Workflow.png?raw=true)  
+![Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Brief_Workflow.png?raw=true)  
 ---
 
 
