@@ -4,7 +4,7 @@
 ![CitySim DataHub]
 ---
 ## 👀 Workflow    
-- **[Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief_Workflow.png?raw=true)** – A high-level overview of the CitySim DataHub pipeline.  
+![Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief_Workflow.png?raw=true)  
 ---
 
 
