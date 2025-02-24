@@ -1,7 +1,6 @@
 # CitySim DataHub 🚀  
 📡 **Real-Time Smart City Data Streaming, Processing, and Analytics**  
 
-![CitySim DataHub]
 ---
 ![Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief_Workflow.png?raw=true)  
 ---
