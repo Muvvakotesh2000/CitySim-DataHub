@@ -151,7 +151,7 @@ python AWS\ Scripts/merge_hourly.py
 
 ## 📞 Contact
 📧 Email: muvvakoteshyadav@gmail.com  
-🌐 LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/koteswararaomuvva/)  
+🌐 LinkedIn: [LinkedIn](https://www.linkedin.com/in/koteswararaomuvva/)  
 
 ---
 
