@@ -150,8 +150,7 @@ python AWS\ Scripts/merge_hourly.py
 
 ## 👀 Workflow Visualizations  
 To better understand the workflow, download and view the following visualizations:  
-- **[Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/raw/main/Workflow/Brief%20Workflow.html)** – A high-level overview of the CitySim DataHub pipeline.  
-- **[Detailed Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/raw/main/Workflow/Detailed%20Workflow.html)** – A step-by-step breakdown of the data flow and processes.  
+- **[Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief Workflow.png)** – A high-level overview of the CitySim DataHub pipeline.  
 ---
 ---
 
