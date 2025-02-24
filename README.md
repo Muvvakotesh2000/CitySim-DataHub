@@ -1,7 +1,12 @@
 # CitySim DataHub 🚀  
 📡 **Real-Time Smart City Data Streaming, Processing, and Analytics**  
 
-![CitySim DataHub](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Dashboard.png?raw=true)
+![CitySim DataHub]
+---
+## 👀 Workflow    
+- **[Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief Workflow.png)** – A high-level overview of the CitySim DataHub pipeline.  
+---
+
 
 ---
 
@@ -146,12 +151,6 @@ python AWS\ Scripts/merge_hourly.py
 🕒 **Midnight Cleanup (12:00 PM)**: Lambda clears old data → Fresh day!  
 
 
----
-
-## 👀 Workflow Visualizations  
-To better understand the workflow, download and view the following visualizations:  
-- **[Brief Workflow](https://github.com/Muvvakotesh2000/CitySim-DataHub/Screenshots/Brief Workflow.png)** – A high-level overview of the CitySim DataHub pipeline.  
----
 ---
 
 ## 👥 Contributors  
