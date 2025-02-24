@@ -1,36 +1,34 @@
-# CitySim DataHub 🚀
+# CitySim DataHub 🚀  
 📡 **Real-Time Smart City Data Streaming, Processing, and Analytics**  
 
-![CitySim DataHub](image.png) _(Replace with actual image link if needed)_
+![CitySim DataHub](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Dashboard.png?raw=true)
 
 ---
 
-## 📌 Overview
+## 📌 Overview  
 **CitySim DataHub** is a **real-time data processing and analytics platform** designed to monitor and analyze **environmental conditions, IoT sensor data, public services, traffic, and utilities**. Using **Apache Kafka, Apache Spark, AWS (S3, Glue, Redshift, OpenSearch), and Terraform**, it enables **efficient city management** through **data-driven insights**.
 
 ---
 
-## ⚡ Features
-✅ **Simulated IoT & Smart City Data** – Real-time data generation for environment, traffic, utilities, and public services.  
+## ⚡ Features  
+✅ **Real-time IoT & Smart City Data** – Simulated live feeds for various urban systems.  
 ✅ **Apache Kafka Streaming** – High-throughput message brokering for real-time data ingestion.  
 ✅ **Apache Spark Processing** – Structured Streaming for transforming, aggregating, and analyzing data.  
 ✅ **AWS Cloud Infrastructure** – S3 for storage, Glue for ETL, Redshift for warehousing, OpenSearch for analytics.  
-✅ **Automated Pipelines with Terraform & AWS Lambda** – Fully automated deployment and scheduled jobs.  
 ✅ **Live Dashboards with OpenSearch & Tableau** – Interactive city insights for urban planners & decision-makers.  
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack  
 - **Programming Languages**: Python  
 - **Data Streaming & Processing**: Apache Kafka, Apache Spark  
 - **Cloud Services**: AWS (S3, Glue, Redshift, OpenSearch, Lambda, EventBridge)  
 - **Infrastructure as Code**: Terraform  
 - **Visualization**: OpenSearch, Tableau  
-- **ETL & Automation**: AWS Glue, AWS Lambda  
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure  
 ```
 CitySim DataHub
 │── AWS Scripts/                     # AWS Glue & Lambda scripts
@@ -43,7 +41,6 @@ CitySim DataHub
 │── screenshots/                       # Visuals of dashboards & AWS setup
 │── scripts/                           # Data generation scripts
 │── spark_consumer/                     # Spark consumer to process Kafka data
-│── venv/                              # Virtual environment (Python dependencies)
 │── requirements.txt                   # Python dependencies
 │── README.md                          # Documentation (this file)
 │── CitySim.docx                        # Detailed project document
@@ -52,27 +49,26 @@ CitySim DataHub
 
 ---
 
-## 🚀 Setup & Installation
-### 1️⃣ Prerequisites
-Ensure you have the following installed:
+## 🚀 Setup & Installation  
+
+### 1️⃣ Prerequisites  
+Ensure you have the following installed:  
 - **Python 3.8+**  
 - **Apache Kafka**  
 - **Apache Spark**  
 - **Terraform**  
 - **AWS CLI & Terraform CLI**  
 
-### 2️⃣ Clone the Repository
-```bash
-git clone https://github.com/Muvvakotesh2000/CitySim-DataHub.git
-cd CitySim-DataHub
-```
+---
 
-### 3️⃣ Install Dependencies
+### 2️⃣ Install Dependencies  
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Start Kafka & Zookeeper
+---
+
+### 3️⃣ Start Apache Kafka & Zookeeper  
 ```bash
 # Start Zookeeper
 bin/zookeeper-server-start.sh config/zookeeper.properties
@@ -80,25 +76,46 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 # Start Kafka Server
 bin/kafka-server-start.sh config/server.properties
 ```
+![Zookeeper Running](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Zookeeper.png?raw=true)  
+![Kafka Server Running](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Apache%20Kafka.png?raw=true)  
 
-### 5️⃣ Run Kafka Producers
+---
+
+### 4️⃣ Run Kafka Producers  
 ```bash
 python kafka_producers/run_producers.py
 ```
+![Kafka Producer](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Kafka%20Producer.png?raw=true)  
 
-### 6️⃣ Start Spark Consumer
+---
+
+### 5️⃣ Start Spark Consumer  
 ```bash
 python spark_consumer/spark_kafka_consumer.py
 ```
+![Spark Consumer Running](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Apache%20Spark.png?raw=true)  
 
-### 7️⃣ Deploy AWS Infrastructure
+---
+
+### 6️⃣ Deploy AWS Infrastructure using Terraform  
 ```bash
 cd infrastructure/terraform
 terraform init
 terraform apply -auto-approve
 ```
 
-### 8️⃣ Run AWS Glue Jobs
+---
+
+### 7️⃣ AWS S3 Bucket Setup  
+Create S3 buckets manually or using Terraform.  
+- `citysim-raw-data-bucket` → Stores raw data.  
+- `citysim-processed-data-bucket` → Stores processed data.  
+![S3 Buckets](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Raw%20S3%20Bucket.png?raw=true)  
+![Processed S3](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Processed%20S3%20Bucket.png?raw=true)  
+
+---
+
+### 8️⃣ Run AWS Glue Jobs  
 ```bash
 python AWS\ Scripts/pushS3ToOS.py
 python AWS\ Scripts/merge_hourly.py
@@ -106,7 +123,14 @@ python AWS\ Scripts/merge_hourly.py
 
 ---
 
-## 📊 Data Pipeline
+### 9️⃣ Visualize Data with OpenSearch & Tableau  
+- Connect OpenSearch to fetch real-time insights.  
+- Use Tableau to create interactive dashboards.  
+![CitySim Dashboard](https://github.com/Muvvakotesh2000/CitySim-DataHub/blob/main/Screenshots/Dashboard.png?raw=true)  
+
+---
+
+## 📊 Data Pipeline  
 1️⃣ **Simulated IoT & City Data** → Generated by **Python scripts**  
 2️⃣ **Real-Time Streaming** → Kafka **produces data every 5 seconds**  
 3️⃣ **Data Processing** → Spark **reads, transforms & writes** processed data  
@@ -115,14 +139,7 @@ python AWS\ Scripts/merge_hourly.py
 
 ---
 
-## 📊 Visualization & Dashboards
-- **OpenSearch** → Live analytics for monitoring city metrics.  
-- **Tableau** → CSV exports from OpenSearch for advanced visualization.  
-- **AWS Glue & Redshift** → For historical & large-scale data analytics.  
-
----
-
-## 🔄 Scheduled Jobs
+## 🔄 Scheduled Jobs  
 🕒 **Hourly**: AWS Glue merges processed data → Redshift.  
 🕒 **Daily (11:40 PM)**: Glue flattens raw data → S3.  
 🕒 **Nightly (11:45 PM)**: Redshift loads flattened data → Data Warehouse.  
@@ -130,13 +147,13 @@ python AWS\ Scripts/merge_hourly.py
 
 ---
 
-## 👥 Contributors
+## 👥 Contributors  
 - **[Koteswara Rao Muvva](https://github.com/Muvvakotesh2000)** – Project Lead & Developer  
 - **Open to Collaboration!** If you're passionate about **Big Data, Streaming, and Cloud**, feel free to contribute! 🚀  
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing  
 1️⃣ **Fork the repository**  
 2️⃣ **Create a new branch** (`feature-new`)  
 3️⃣ **Commit your changes** (`git commit -m "Added new feature"`)  
@@ -144,18 +161,18 @@ python AWS\ Scripts/merge_hourly.py
 
 ---
 
-## 📜 License
+## 📜 License  
 📝 **MIT License** – Feel free to use, modify, and distribute!  
 
 ---
 
-## 📞 Contact
+## 📞 Contact  
 📧 Email: muvvakoteshyadav@gmail.com  
-🌐 LinkedIn: [LinkedIn](https://www.linkedin.com/in/koteswararaomuvva/)  
+🌐 LinkedIn: [Koteswara Rao Muvva](https://www.linkedin.com/in/koteswararaomuvva/)  
 
 ---
 
-### 🚀 **Built for the Future of Smart Cities!**
+### 🚀 **Built for the Future of Smart Cities!**  
 **Let's make cities smarter, more efficient, and data-driven!** 🌍💡  
 
 🔗 **Star ⭐ this repository** if you find it useful!  
