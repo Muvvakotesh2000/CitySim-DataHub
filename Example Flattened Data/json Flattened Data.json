@@ -1,0 +1,40 @@
+{"avg_response_time_minutes":18.0,"incident_type":"Workplace Accident\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":11.666666666666666,"incident_type":"Industrial Accident\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":12.0,"incident_type":"Medical Transport\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.5,"incident_type":"Animal Control\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":12.5,"incident_type":"Public Intoxication\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":12.0,"incident_type":"Building Collapse\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":17.0,"incident_type":"Explosion\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":8.0,"incident_type":"Heatwave Response\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":19.0,"incident_type":"Gunfire Reported\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":15.0,"incident_type":"Water Main Break\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":20.0,"incident_type":"Traffic Accident\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":18.0,"incident_type":"Counterfeit Currency\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":15.0,"incident_type":"Rescue Operation\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":16.0,"incident_type":"Wildfire\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.0,"incident_type":"Found Property\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":8.0,"incident_type":"Fire\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":9.0,"incident_type":"Active Shooter\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":18.0,"incident_type":"Trespassing\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":11.0,"incident_type":"Vandalism\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.0,"incident_type":"Suspicious Person\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":12.0,"incident_type":"Bomb Threat\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.0,"incident_type":"Hazardous Material Spill\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":12.0,"incident_type":"Domestic Violence\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.0,"incident_type":"Crowd Control\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":17.0,"incident_type":"Avalanche\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.0,"incident_type":"Cold Weather Shelter\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":11.0,"incident_type":"Dam Failure\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":17.0,"incident_type":"Lost Property\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":8.5,"incident_type":"Mine Collapse\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":16.0,"incident_type":"Bridge Collapse\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":17.0,"incident_type":"Oil Spill\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":15.0,"incident_type":"Burglary\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":18.0,"incident_type":"Snowstorm Hazard\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":18.0,"incident_type":"Epidemic Control\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":7.0,"incident_type":"Suspicious Package\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":7.0,"incident_type":"School Lockdown\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":6.0,"incident_type":"Illegal Dumping\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":15.5,"incident_type":"Theft\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":12.0,"incident_type":"Utility Failure\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
+{"avg_response_time_minutes":19.0,"incident_type":"Flooding\n","window_start":"2025-02-21T08:25:00.000-08:00","window_end":"2025-02-21T08:30:00.000-08:00"}
